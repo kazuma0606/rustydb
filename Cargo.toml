@@ -37,6 +37,9 @@ itertools = "0.11" # イテレータ拡張
 # 日付・時刻操作
 chrono = { version = "0.4", features = ["serde"] }
 
+# APIクライアントテスト用
+reqwest = { version = "0.11", features = ["json"] }
+
 [dev-dependencies]
 # テスト用クレート
 proptest = "1.2"  # プロパティベーステスト

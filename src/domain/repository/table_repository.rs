@@ -76,6 +76,7 @@ pub trait TableRepository: Send + Sync {
     async fn update(
         &self,
         table_name: &str,
+        updates: &[(String, Value)],
         filter: Option<&FilterCondition>,
     ) -> Result<usize, RepositoryError>;
 
