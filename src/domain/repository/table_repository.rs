@@ -106,10 +106,10 @@ pub enum FilterCondition {
 pub enum FilterOperator {
     Equal,
     NotEqual,
-    GraterThan,
-    GraterThanOrEqual,
-    LessThan,
-    LessThanOrEqual,
+    Greater, // GreaterThanではなくGreater
+    GreaterOrEqual, // GreaterThanOrEqualではなくGreaterOrEqual
+    Less, // LessThanではなくLess
+    LessOrEqual, // LessThanOrEqualではなくLessOrEqual
     Like,
 }
 
