@@ -1,0 +1,49 @@
+[package]
+name = "rustydb"
+version = "0.1.0"
+edition = "2021"
+authors = ["yoshimura.hisa@gmail.com"]
+description = "A Rust-based database system for educational purposes"
+
+[dependencies]
+# コア依存関係
+sqlparser = "0.35"                                 # SQLパーサー
+serde = { version = "1.0", features = ["derive"] } # シリアライズ/デシリアライズ
+serde_json = "1.0"                                 # JSONサポート
+thiserror = "1.0"                                  # エラー定義
+async-trait = "0.1"                                # 非同期トレイト
+
+# Webフレームワーク
+axum = "0.6"                                                   # Webサーバー
+tower = "0.4"                                                  # HTTPミドルウェア
+tower-http = { version = "0.4", features = ["cors", "trace"] }
+
+# 非同期ランタイム
+tokio = { version = "1", features = ["full"] }
+
+# ロギング
+tracing = "0.1"                                                     # 構造化ロギング
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+# 開発効率化
+derive_more = "0.99"                                # ボイラープレート削減
+typed-builder = "0.16"                              # ビルダーパターン
+strum = { version = "0.25", features = ["derive"] }
+
+# ユーティリティ
+bytes = "1.4"      # バイト操作
+itertools = "0.11" # イテレータ拡張
+
+# 日付・時刻操作
+chrono = { version = "0.4", features = ["serde"] }
+
+[dev-dependencies]
+# テスト用クレート
+proptest = "1.2"  # プロパティベーステスト
+test-case = "3.1" # パラメータ化テスト
+mockall = "0.11"  # モックオブジェクト
+criterion = "0.5" # ベンチマーク
+
+[[bench]]
+name = "query_benchmarks"
+harness = false
